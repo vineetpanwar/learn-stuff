@@ -5,12 +5,13 @@ function countUniqueValues(arr) {
   var j = i + 1;
   while(j < arr.length) {
    if( arr[j] !== arr[i]) {
-     arr[i] = arr[j]
      i++;
+     arr[i] = arr[j]
    }
      j++
     
   }
+  console.log(arr)
   return i + 1;
   
 }
