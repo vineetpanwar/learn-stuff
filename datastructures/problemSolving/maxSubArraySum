@@ -1,0 +1,17 @@
+function maxSubArraySum(arr, num) {
+  var maxSum = 0 , tempSum;
+  if(arr.length < num) return undefined
+  for(var i = 0; i < num; i++) {
+    maxSum  = maxSum + arr[i]
+  }
+  tempSum = maxSum;
+  
+  for(var i = num; i < arr.length;i++) {
+    tempSum = tempSum - arr[i - num] + arr[i]
+    maxSum = Math.max(maxSum,tempSum)
+  }
+  return maxSum
+ 
+}
+
+console.log('vin',maxSubArraySum([1,1,1,1,2],2))
