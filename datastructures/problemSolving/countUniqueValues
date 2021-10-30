@@ -1,0 +1,19 @@
+//count unique values with constant space complexity and o(n) time complexity
+function countUniqueValues(arr) {
+  if(arr.length <=0) return 0
+  var i = 0;
+  var j = i + 1;
+  while(j < arr.length) {
+   if( arr[j] !== arr[i]) {
+     arr[i] = arr[j]
+     i++;
+   }
+     j++
+    
+  }
+  return i + 1;
+  
+}
+
+console.log('vin',countUniqueValues([1,1,1,1,2]))
+console.log('vin',countUniqueValues([-2,-1,-1,0,1]))
