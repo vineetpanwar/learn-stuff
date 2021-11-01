@@ -1,0 +1,35 @@
+function sameFrequency(num1, num2){
+  if(!num1 || !num2 || (String(num1).length !== String(num2).length)) {
+   return false; 
+  }
+  var numOne = String(num1).split("");
+  var numTwo = String(num2).split("");
+  var combinedObj = {}
+  console.log(numOne, numTwo)
+  
+  for( var i = 0; i < numOne.length;i++) {
+    if(!combinedObj[numOne[i]]) {
+      combinedObj[numOne[i]] = 1;   
+    } else {
+      combinedObj[numOne[i]]  = combinedObj[numOne[i]] + 1
+      
+    }
+    if(!combinedObj[numTwo[i]]) {
+      combinedObj[numTwo[i]] = -1;
+    } else {
+      combinedObj[numTwo[i]] =combinedObj[numTwo[i]] - 1
+      
+    }
+    
+    if(!combinedObj[numOne[i]]) delete combinedObj[numOne[i]]
+    if(!combinedObj[numTwo[i]]) delete combinedObj[numTwo[i]]
+  }
+  console.log(combinedObj)
+  
+  if(Object.keys(combinedObj).length) return false
+  return true
+     
+}
+
+console.log(sameFrequency(821,281))
+console.log(sameFrequency(34,14))
