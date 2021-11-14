@@ -1,0 +1,24 @@
+function fib(num, num1, num2){
+  if(!num1 && !num2) {
+    num1 = 1;
+    num2 = 1;
+    
+    return fib(--num, num1, num2)
+    
+  }
+  
+  if(num < 1) {
+    
+    return num1;
+    }
+  else {
+  var temp = num2;
+  num2 = num1 + num2
+  num1 = temp
+  
+  return fib(--num, num1, num2)
+  }
+
+}
+console.log(fib(10))
+console.log(fib(4))
