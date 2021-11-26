@@ -1,3 +1,25 @@
+function selectionSort(arr){
+  for(var i = 0; i<arr.length ;i++) {
+    var min=arr[i],minIndex=i;
+    
+    for(var j=i+1; j <arr.length;j++){
+     if(arr[j] < min) {
+       min=arr[j];
+       minIndex=j;
+     }
+    }
+    if(i !== minIndex) {
+    [arr[minIndex],arr[i]] = [arr[i],arr[minIndex]]
+    }
+  }
+  return arr
+}
+
+console.log(selectionSort([3,5,4,7,2,1]))
+
+
+
+
 //this file has the polyfill code of selection sorting
 //traverse from left to right, find the min and store it index wise
 const findMin = (arr,currIndex) => {
