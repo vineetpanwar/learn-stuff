@@ -1,3 +1,24 @@
+function insertionSort(arr){
+  for(var i = 1; i<arr.length ;i++) {
+      var displacedIndex = i;
+    for(var j=i-1; j>=0 ;j--){
+     if(arr[j] > arr[displacedIndex]) {
+      [arr[j],arr[displacedIndex]] = [arr[displacedIndex],arr[j]];
+       displacedIndex--
+     } else {
+       break;
+     }
+    }
+  }
+  return arr
+}
+
+console.log(insertionSort([3,5,4,7,2,1]))
+
+
+
+
+
 //this file has the polyfill code of insertion sorting
 //here we tranverse from left to right such that everything to the left is sorted and everything to the right is 
 //unsorted. for performance optimization we trasverse oly if we swap the elements.
